@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :users 
-  #get "/hello", to: "application#hello_world"
+  resources :users, only: [:show, :create, :destroy, :update]
+  resources :sessions, only: [:create, :destroy]
 
-  #get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+
+  get "/hello", to: "application#hello_world"
+
+  # get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+
 
 end
