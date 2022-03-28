@@ -33,7 +33,7 @@ function Header() {
 						<div class="form-inline">
 							<button class="btn btn-outline-white mr-2" type="submit">SCHEDULE APPOINTMENT</button>
 							<button class="btn btn-outline-white mr-2" type="submit">REGISTER</button>
-							<button class="btn btn-primary" data-toggle="modal" data-target="#one">LOGIN</button>
+							<button class="btn btn-outline-white mr-2" type="submit">LOGIN</button>
 						</div>
 					</div>
 				</div>
