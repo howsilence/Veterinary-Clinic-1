@@ -12,7 +12,11 @@ class UsersController < ApplicationController
         user = find_user
         render json: user, status: :ok
         # render json: @current_user
+    end
 
+    def index
+        user = User.all
+        render json: user, status: :ok
     end
 
     private

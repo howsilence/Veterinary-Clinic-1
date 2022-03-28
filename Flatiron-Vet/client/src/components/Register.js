@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function Register(){
+function Register({onAddUser}){
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -12,7 +12,7 @@ function Register(){
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch("http://localhost:3000/users", {
+        fetch("http://localhost:4000/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -37,7 +37,7 @@ function Register(){
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="first name"
+          name="firstName"
           placeholder="First Name"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
@@ -45,7 +45,7 @@ function Register(){
 
         <input
           type="text"
-          name="last name"
+          name="lastName"
           placeholder="Last Name"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}

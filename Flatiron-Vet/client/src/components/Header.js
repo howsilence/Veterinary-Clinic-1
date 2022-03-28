@@ -31,9 +31,9 @@ function Header() {
 							</li>
 					</ul>
 						<div class="form-inline">
-							<button class="btn btn-outline-white mr-2" type="submit">SCHEDULE APPOINTMENT</button>
-							<button class="btn btn-outline-white mr-2" type="submit">REGISTER</button>
-							<button class="btn btn-outline-white mr-2" type="submit">LOGIN</button>
+							<a class="nav-link" href="/scheduleapt"><button class="btn btn-outline-white mr-2" type="button">SCHEDULE APPOINTMENT</button></a>
+							<a class="nav-link" href="/register"><button class="btn btn-outline-white mr-2" type="button">REGISTER</button></a>
+							<a class="nav-link" href="/login"><button class="btn btn-outline-white mr-2" type="button">LOGIN</button></a>
 						</div>
 					</div>
 				</div>
