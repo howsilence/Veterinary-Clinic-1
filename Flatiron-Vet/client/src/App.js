@@ -35,7 +35,7 @@ function App() {
             <Header/>
             <Home />
           </Route>
-          <Route path="/createuser">
+          <Route path="/register">
           </Route>
           <Route path="/user">
           </Route>
