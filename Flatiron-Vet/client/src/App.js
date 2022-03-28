@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from './components/Header'
 import Home from './components/Home'
 import Register from './components/Register'
+import Login from './components/Login'
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -33,7 +34,9 @@ function App() {
             <Header />
             <Register onAddUser={handleAddUser} />
           </Route>
-          <Route path="/user">
+          <Route path="/login">
+            <Header />
+            <Login />
           </Route>
           <Route path="/">
             <Header/>
