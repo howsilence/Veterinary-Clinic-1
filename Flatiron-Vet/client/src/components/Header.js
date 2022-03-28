@@ -11,7 +11,7 @@ function Header() {
 				<div class="c-container">
 					<div class="nav-items">
 					<a href="/">
-					<img class="site-logo" src="https://md-aqil.github.io/images/logo2.png" alt=""/>
+					<img class="site-logo" src="./assets/vetlogo.png" alt=""/>
 					</a>
 					<ul class="main-nav">
 						<li class="nav-item active">

@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Register from './components/Register'
 import Footer from './components/Footer'
 
+import Login from './components/Login'
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -35,7 +36,9 @@ function App() {
             <Header />
             <Register onAddUser={handleAddUser} />
           </Route>
-          <Route path="/user">
+          <Route path="/login">
+            <Header />
+            <Login />
           </Route>
           <Route path="/">
             <Header/>

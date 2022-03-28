@@ -224,37 +224,7 @@ h1 {
     font-weight: bolder;
     color: #1f2937
 }
-.seals {
-    max-height: 40%;
-    max-width: 40%;
-    border:solid 5px #3882f6;
-    border-radius: 20px;
-}
-.pics {
-    display: flex;
-    flex:1;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-}
-.picOne {
-    flex:1;
-    margin-left: 60px;
-    text-align: center;
-}
-.picTwo {
-    flex:1;
-    text-align: center;
-}
-.picThree {
-    flex: 1;
-    text-align: center;
-}
-.picFour {
-    flex:1;
-    text-align: center;
-}
+
 /*THIRD SECTION*/
 .quote {
     display: flex;
@@ -301,7 +271,81 @@ h3 {
     font-weight: bold;
     border:white 2px solid;
     
-} */
+}
 
-/* Footer */
+/* FORM BUTTON STYLING */
+.formContainer{
+    background-color: #1f2937;
+}
+section.form {
+	opacity: 1;
+	background-color: transparent;
+	padding: 20px;
+	text-align: center;
+  	color: #cacaca;
+}
 
+.center {
+	margin-right: auto;
+  	margin-left: auto;
+  	display: block;
+  	width: 400px;
+  	margin-top: 100px;
+  	margin-bottom: 60px;
+}
+
+input {
+	opacity: 0.3;
+	border-radius: 20px;
+	padding: 10px;
+	width: 80%;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 10px;
+	box-shadow: none;
+	color: #fff;
+	border: none;
+	background-color: #5d5d5d;
+	transition: 1s;
+	border: 2px solid transparent;
+}
+
+input:focus, input:hover {
+	transition: 1s;
+	border: 2px solid #5d5d5d;
+	background-color: transparent;
+}
+
+.firstLastNames {
+	width: 36%;
+	display: inline;
+}
+
+.formSubmit {
+	width: 86%;
+	border-radius: 20px;
+	background-color: #cacaca;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	box-shadow: none;
+	text-shadow: none;
+	border: none;
+	padding: 10px;
+	font-family: 'Abel', sans-serif;
+	transition: 1s;
+}
+
+.formSubmit:hover {
+	background-color: #daa800;
+	transition: 1s;
+}
+
+.formHr{
+    border: "1px", solid, #daa800;
+    width: 20%
+}
+.formB{
+    color: #daa800
+}

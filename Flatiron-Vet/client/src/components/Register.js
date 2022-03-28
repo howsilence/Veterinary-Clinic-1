@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useParams } from 'react-router-dom';
 
 function Register({onAddUser}){
 
@@ -11,19 +12,18 @@ function Register({onAddUser}){
 
 
     function handleSubmit(e) {
-        e.preventDefault();
         fetch("http://localhost:4000/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            firstName: firstName,
-            lastName: lastName,
+            first_name: firstName,
+            last_name: lastName,
             email: email,
             username: username,
             password: password,
-            passwordConfirm: passwordConfirm
+            password_confirm: passwordConfirm
           }),
         })
           .then((r) => r.json())
@@ -32,11 +32,17 @@ function Register({onAddUser}){
 
 
     return(
-        <div className="new-user-form">
+        <div class="formContainer">
+        <section class="form">
+    <div class="center">
+	<h1>JOIN OVER <b class="formB">{3}</b> PEOPLE ON OUR NETWORK</h1>
+	<hr class="formHr" />
+
       <h2>New User</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          class="firstLastNames"
           name="firstName"
           placeholder="First Name"
           value={firstName}
@@ -45,6 +51,7 @@ function Register({onAddUser}){
 
         <input
           type="text"
+          class="firstLastNames"
           name="lastName"
           placeholder="Last Name"
           value={lastName}
@@ -68,7 +75,7 @@ function Register({onAddUser}){
         />
 
         <input
-          type="text"
+          type="password"
           name="password"
           placeholder="Password"
           value={password}
@@ -76,14 +83,16 @@ function Register({onAddUser}){
         />
 
         <input
-          type="text"
+          type="password"
           name="password confirm"
           placeholder="Confirm Password"
           value={passwordConfirm}
           onChange={(e) => setPasswordConfirm(e.target.value)}
         />
-        <button type="submit">Register</button>
+        <button class="formSubmit" type="submit">Register</button>
       </form>
+    </div>
+    </section>
     </div>
   );
 
