@@ -35,7 +35,7 @@ function Register({onAddUser}){
         <div class="formContainer">
         <section class="form">
     <div class="center">
-	<h1>JOIN OVER <b class="formB">{2}</b> PEOPLE ON OUR NETWORK</h1>
+	<h1>JOIN OVER <b class="formB">{3}</b> PEOPLE ON OUR NETWORK</h1>
 	<hr class="formHr" />
 
       <h2>New User</h2>
@@ -75,7 +75,7 @@ function Register({onAddUser}){
         />
 
         <input
-          type="text"
+          type="password"
           name="password"
           placeholder="Password"
           value={password}
@@ -83,7 +83,7 @@ function Register({onAddUser}){
         />
 
         <input
-          type="text"
+          type="password"
           name="password confirm"
           placeholder="Confirm Password"
           value={passwordConfirm}
