@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Header from './components/Header'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,13 +32,13 @@ function App() {
           </Route>
           <Route path="/">
             <Header/>
-            <Home />
+            
           </Route>
           <Route path="/createuser">
             <createUserForm /> //build out new user form here
           </Route>
           <Route path="/user">
-            <UserInfo /> // build out user information page, allow CRUD
+           
           </Route>
         </Switch>
       </div>
