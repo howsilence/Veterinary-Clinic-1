@@ -30,7 +30,8 @@ function App() {
             <h1>Test Route</h1>
           </Route>
           <Route path="/">
-            <h1>Page Count: {count}</h1>
+            <Header/>
+            <Home />
           </Route>
           <Route path="/createuser">
             <createUserForm /> //build out new user form here
