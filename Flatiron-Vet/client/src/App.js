@@ -2,42 +2,42 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from './components/Header'
 import Home from './components/Home'
+import Register from './components/Register'
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [user, setUser] = useState([]);
+  const [users, setUsers] = useState([]);
 
     useEffect(() => {
-      fetch("http://localhost:4000/users/1")
+      fetch("http://localhost:4000/users")
         .then((r) => r.json())
-        .then((userObj) => {
-          console.log(userObj)
-          setUser(userObj);
+        .then((usersArr) => {
+          console.log(usersArr)
+          setUsers(usersArr);
         });
     }, []);
 
-    console.log(user)
+    console.log(users)
 
-  useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
+    function handleAddUser(newUser) {
+      const updatedUsersArray = [...users, newUser];
+      setUsers(updatedUsersArray);
+    }
+
+
 
   return (
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route path="/testing">
-            <h1>Test Route</h1>
+          <Route path="/register">
+            <Header />
+            <Register onAddUser={handleAddUser} />
+          </Route>
+          <Route path="/user">
           </Route>
           <Route path="/">
             <Header/>
             <Home />
-          </Route>
-          <Route path="/createuser">
-          </Route>
-          <Route path="/user">
           </Route>
         </Switch>
       </div>

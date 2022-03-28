@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, only: [:show, :create, :destroy, :update]
+  resources :users, only: [:index, :show, :create, :destroy, :update]
   resources :sessions, only: [:create, :destroy]
 
   # get '/users/:id', to: 'users#show'
