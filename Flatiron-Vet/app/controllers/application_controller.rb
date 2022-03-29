@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
-  # before_action :authorize
+  before_action :authorize
   # skip_before_action :hello_world
 
   def hello_world
