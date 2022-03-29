@@ -6,6 +6,7 @@ import Register from './components/Register'
 import Footer from './components/Footer'
 import Account from './components/Account'
 import Login from './components/Login'
+import Testimonials from './components/Testimonials'
 
 function App() {
 
@@ -69,6 +70,11 @@ function App() {
           <Route path="/account">
             <Header logout={handleLogoutClick} user={user} setUser={setUser} />
             <Account user={user} setUser={setUser} />
+            <Footer/>
+          </Route>
+          <Route path="/testimonials">
+            <Header/>
+            <Testimonials/>
             <Footer/>
           </Route>
           <Route path="/">
