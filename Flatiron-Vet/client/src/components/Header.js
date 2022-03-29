@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header() {
+function Header({logout}) {
 
 
 
@@ -18,13 +18,13 @@ function Header() {
 						<a class="nav-link active" href="/">Home</a>
 						</li>
 						<li class="nav-item">
-						<a class="nav-link" href="/team">Our Team</a>
+						<a class="nav-link" href="/account">My Account</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/faq">F.A.Q.</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="/news">Latest News</a>
+								<a class="nav-link" href="/team">Our Team</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="/testimonials">Testimonials</a>

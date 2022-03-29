@@ -4,27 +4,46 @@ import Header from './components/Header'
 import Home from './components/Home'
 import Register from './components/Register'
 import Footer from './components/Footer'
-
+import Account from './components/Account'
 import Login from './components/Login'
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [usersList, setUsersList] = useState([]);
+  const [user, setUser] = useState(null);
 
     useEffect(() => {
-      fetch("http://localhost:4000/users")
+      fetch("http://localhost:4000/users/")
         .then((r) => r.json())
         .then((usersArr) => {
           console.log(usersArr)
-          setUsers(usersArr);
+          setUsersList(usersArr);
         });
     }, []);
+    console.log(usersList)
 
-    console.log(users)
+    useEffect(() =>{
+      fetch('/me').then((r) => {
+        if (r.ok) {
+          r.json().then((user) => setUser(user))
+        }
+      });
+    }, []);
+
+
 
     function handleAddUser(newUser) {
-      const updatedUsersArray = [...users, newUser];
-      setUsers(updatedUsersArray);
+      const updatedUsersArray = [...usersList, newUser];
+      setUsersList(updatedUsersArray);
     }
+
+
+	function handleLogoutClick() {
+		fetch("/logout", { method: "DELETE" }).then((r) => {
+		  if (r.ok) {
+			setUser(null);
+		  }
+		});
+	  }
 
 
 
@@ -33,15 +52,22 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/register">
-            <Header />
+            <Header logout={handleLogoutClick} user={user} setUser={setUser}/>
             <Register onAddUser={handleAddUser} />
+            <Footer/>
           </Route>
           <Route path="/login">
-            <Header />
-            <Login />
+            <Header logout={handleLogoutClick} user={user} setUser={setUser} />
+            <Login user={user} onLogin={setUser} />
+            <Footer/>
+          </Route>
+          <Route path="/account">
+            <Header logout={handleLogoutClick} user={user} setUser={setUser} />
+            <Account user={user} setUser={setUser} />
+            <Footer/>
           </Route>
           <Route path="/">
-            <Header/>
+            <Header logout={handleLogoutClick} user={user} setUser={setUser}/>
             <Home />
             <Footer/>
           </Route>

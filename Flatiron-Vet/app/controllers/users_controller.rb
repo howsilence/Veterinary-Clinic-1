@@ -9,14 +9,14 @@ class UsersController < ApplicationController
     end
     
     def show
-        user = find_user
-        render json: user, status: :ok
-        # render json: @current_user
+        # user = User.find(session[:id])
+        # render json: user, status: :ok
+        render json: @current_user
     end
 
     def index
-        user = User.all
-        render json: user, status: :ok
+        users = User.all
+        render json: users, status: :ok
     end
 
     private
@@ -28,4 +28,8 @@ class UsersController < ApplicationController
     def find_user
         User.find(params[:id])
     end
+
+    # def current_user
+    #     User.find(session[:id])
+    # end
 end
