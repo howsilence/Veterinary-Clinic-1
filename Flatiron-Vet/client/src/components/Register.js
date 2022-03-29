@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import { useParams } from 'react-router-dom';
 
 function Register({onAddUser}){
 
@@ -8,11 +7,16 @@ function Register({onAddUser}){
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [passwordConfirm, setPasswordConfirm] = useState("");
+    const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const [errors, setErrors] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
 
     function handleSubmit(e) {
-        fetch("http://localhost:4000/users", {
+      e.preventDefault();
+      setErrors([]);
+      setIsLoading(true);
+        fetch("/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -23,77 +27,89 @@ function Register({onAddUser}){
             email: email,
             username: username,
             password: password,
-            password_confirm: passwordConfirm
+            password_confirmation: passwordConfirmation
           }),
-        })
-          .then((r) => r.json())
-          .then((newUser) => onAddUser(newUser));
-      }
-
+        }).then((r) => {
+            setIsLoading(false);
+            if (r.ok){
+            r.json().then((user) => onAddUser(user));
+            } else {
+              r.json().then((err) => setErrors(err.errors));
+            }
+      });
+    }
 
     return(
         <div class="formContainer">
-        <section class="form">
-    <div class="center">
-	<h1>JOIN OVER <b class="formB">{3}</b> PEOPLE ON OUR NETWORK</h1>
-	<hr class="formHr" />
+          <section class="form">
+            <div class="center">
+	            <h1>JOIN OVER <b class="formB">{3}</b> PEOPLE ON OUR NETWORK</h1>
+	            <hr class="formHr" />
 
-      <h2>New User</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          class="firstLastNames"
-          name="firstName"
-          placeholder="First Name"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
+              <h2>New User</h2>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  class="firstLastNames"
+                  name="firstName"
+                  placeholder="First Name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
 
-        <input
-          type="text"
-          class="firstLastNames"
-          name="lastName"
-          placeholder="Last Name"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
+                <input
+                  type="text"
+                  class="firstLastNames"
+                  name="lastName"
+                  placeholder="Last Name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
 
-        <input
-          type="text"
-          name="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
 
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
 
-        <input
-          type="password"
-          name="password confirm"
-          placeholder="Confirm Password"
-          value={passwordConfirm}
-          onChange={(e) => setPasswordConfirm(e.target.value)}
-        />
-        <button class="formSubmit" type="submit">Register</button>
-      </form>
-    </div>
-    </section>
-    </div>
+                <input
+                  type="password"
+                  name="password confirmation"
+                  placeholder="Confirm Password"
+                  value={passwordConfirmation}
+                  onChange={(e) => setPasswordConfirmation(e.target.value)}
+                />
+
+                <button class="formSubmit" type="submit">{isLoading ? "Loading.." : "Register"}</button>
+
+                <span>
+                  {errors.map((err) => (
+                    <span key={err}>{err}</span>
+                  ))}
+                </span>
+
+              </form>
+            </div>
+          </section>
+        </div>
   );
 
 }
