@@ -8,19 +8,28 @@ import Account from './components/Account'
 import Login from './components/Login'
 
 function App() {
+
+  //making sure we have our users
   const [usersList, setUsersList] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:4000/users/")
+      .then((r) => r.json())
+      .then((usersArr) => {
+        console.log(usersArr)
+        setUsersList(usersArr);
+      });
+  }, []);
+  console.log(usersList)
+
+  function handleAddUser(newUser) {
+    const updatedUsersArray = [...usersList, newUser];
+    setUsersList(updatedUsersArray);
+  }
+
+
+
+  //setting state for our session
   const [user, setUser] = useState(null);
-
-    useEffect(() => {
-      fetch("http://localhost:4000/users/")
-        .then((r) => r.json())
-        .then((usersArr) => {
-          console.log(usersArr)
-          setUsersList(usersArr);
-        });
-    }, []);
-    console.log(usersList)
-
     useEffect(() =>{
       fetch('/me').then((r) => {
         if (r.ok) {
@@ -31,11 +40,7 @@ function App() {
 
 
 
-    function handleAddUser(newUser) {
-      const updatedUsersArray = [...usersList, newUser];
-      setUsersList(updatedUsersArray);
-    }
-
+   
 
 	function handleLogoutClick() {
 		fetch("/logout", { method: "DELETE" }).then((r) => {
