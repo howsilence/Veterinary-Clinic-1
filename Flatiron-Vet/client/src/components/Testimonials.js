@@ -9,7 +9,7 @@ function Testimonials() {
             <div className='testimonial-wrapper'>
                 <div className="container">
                     <img src="./assets/dogmale1.jpeg" className="avatar" style={{ width: "90px" }} />
-                    <p><span>Cooper.</span> CEO at Mighty Schools.</p>
+                    <p className='nome-pet'><span>Cooper.</span> CEO at Mighty Schools.</p>
                     <p>John Doe saved us from a web disaster.</p>
                 </div>
                 <div className="container">
@@ -23,14 +23,14 @@ function Testimonials() {
                     <p>No one is better than John Doe.</p>
                 </div>
                 <div className="container">
-                    <img src="./assets/dogmale2.jpeg" alt="image" className="avatar" style={{ width: "90px" }} />
+                    <img src="./assets/elephant.jpeg" alt="image" className="avatar" style={{ width: "90px" }} />
                     <p><span >Apollo.</span> CEO at Company.</p>
                     <p>No one is better than John Doe.</p>
                 </div>
                 <div className="container">
                     <img src="./assets/hipopotamo.jpeg" alt="image" className="avatar" style={{ width: "90px" }} />
-                    <p><span >Fiona.</span> CEO at Company.</p>
-                    <p>No one is better than John Doe.</p>
+                    <p><span >Fiona.</span> Pet of the month.</p>
+                    <p>No one is better than Ava.</p>
                 </div>
                 <div className="container">
                     <img src="./assets/pig.jpeg" alt="image" className="avatar" style={{ width: "90px" }} />
