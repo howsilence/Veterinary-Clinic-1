@@ -7,6 +7,8 @@ import Footer from './components/Footer'
 import Account from './components/Account'
 import Login from './components/Login'
 import Testimonials from './components/Testimonials'
+import Team from './components/Team'
+import Faq from './components/Faq'
 
 function App() {
 
@@ -31,25 +33,25 @@ function App() {
 
   //setting state for our session
   const [user, setUser] = useState(null);
-    useEffect(() =>{
-      fetch('/me').then((r) => {
-        if (r.ok) {
-          r.json().then((user) => setUser(user))
-        }
-      });
-    }, []);
+  useEffect(() => {
+    fetch('/me').then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user))
+      }
+    });
+  }, []);
 
 
 
-   
 
-	function handleLogoutClick() {
-		fetch("/logout", { method: "DELETE" }).then((r) => {
-		  if (r.ok) {
-			setUser(null);
-		  }
-		});
-	  }
+
+  function handleLogoutClick() {
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+      }
+    });
+  }
 
 
 
@@ -58,29 +60,39 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/register">
-            <Header logout={handleLogoutClick} user={user} setUser={setUser}/>
+            <Header logout={handleLogoutClick} user={user} setUser={setUser} />
             <Register onAddUser={handleAddUser} />
-            <Footer/>
+            <Footer />
           </Route>
           <Route path="/login">
             <Header logout={handleLogoutClick} user={user} setUser={setUser} />
             <Login user={user} onLogin={setUser} />
-            <Footer/>
+            <Footer />
           </Route>
           <Route path="/account">
             <Header logout={handleLogoutClick} user={user} setUser={setUser} />
             <Account user={user} setUser={setUser} />
-            <Footer/>
+            <Footer />
           </Route>
           <Route path="/testimonials">
-            <Header/>
-            <Testimonials/>
-            <Footer/>
+            <Header />
+            <Testimonials />
+            <Footer />
+          </Route>
+          <Route path="/team">
+            <Header />
+            <Team />
+            <Footer />
+          </Route>
+          <Route path="/Faq">
+            <Header logout={handleLogoutClick} user={user} setUser={setUser}  />
+            <Faq />
+            <Footer />
           </Route>
           <Route path="/">
-            <Header logout={handleLogoutClick} user={user} setUser={setUser}/>
+            <Header logout={handleLogoutClick} user={user} setUser={setUser} />
             <Home />
-            <Footer/>
+            <Footer />
           </Route>
         </Switch>
       </div>

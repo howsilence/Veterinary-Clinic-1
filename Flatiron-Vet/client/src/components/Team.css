@@ -4,7 +4,7 @@ h1 {
     font-family: georgia, arial, helvetica
 
 }
-
+/* coloca o wrapper, assim voce pode mudar todo o code dentro dessa classe */
 .testimonial-wrapper{
     display: flex;
     flex-direction: column;
@@ -58,8 +58,4 @@ h1 {
     height: 90px;
     width: 25px;
 
-  }
-
-  .nome-pet{
-    font-size: 18px;
   }
