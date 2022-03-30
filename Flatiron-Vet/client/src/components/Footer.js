@@ -1,68 +1,54 @@
 import React from 'react';
+import {FaFacebook, FaGithub, FaLinkedin, FaTwitter} from 'react-icons/fa'
 import './Footer.css'
 
-function Footer(){
+const Footer = () => {
+  return (
+      <div className='footer'>
+          <div className='container'>
+              <div className='col col-1'>
+                  <h1>Clinic<span className='primary'>Name</span></h1>
+              </div>
+              <div className='col'>
+                  <h4 className='footer-link-category'>Support</h4>
+                  <span className='bar'></span>
+                      <a className='footer-link'>Contact Us</a>
+                      <a className='footer-link'>Chat</a>
+                      <a className='footer-link'>Help Center</a>
+                      <a className='footer-link'>FAQ</a>
 
-
-    return(
-
-<footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
-            <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. 
-            Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages
-            that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+              </div>
+              <div className='col'>
+                  <h4 className='footer-link-category'>Developers</h4>
+                  <span className='bar'> </span>
+                      <a className='footer-link'> Cloud</a>
+                      <a className='footer-link'>Commerce</a>
+                      <a className='footer-link'>Pro</a>
+                      <a className='footer-link'>API</a>
+                 
+              </div>
+              <div className='col'>
+                  <h4 className='footer-link-category'>Company</h4>
+                  <span className='bar'> </span>
+                      <a className='footer-link'>About</a>
+                      <a className='footer-link'>Information</a>
+                      <a className='footer-link'>Legal</a>
+                      <a className='footer-link'>Privacy</a>
+              </div>
+              <div className='col'>
+                  <h4 className='footer-link-category'>Social</h4>
+                  <span className='bar'> </span>
+                      <a className='footer-link'><FaFacebook className='icon'/></a>
+                      <a className='footer-link'><FaTwitter className='icon'/></a>
+                      <a className='footer-link'><FaLinkedin className='icon'/></a>
+                      <a className='footer-link'><FaGithub className='icon'/></a>
+              </div>
           </div>
-
-          <div class="col-xs-6 col-md-3">
-            <h6>Categories</h6>
-            <ul class="footer-links">
-              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
-              <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-              <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-              <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-              <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-              <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
-            </ul>
-          </div>
-
-          <div class="col-xs-6 col-md-3">
-            <h6>Quick Links</h6>
-            <ul class="footer-links">
-              <li><a href="http://scanfcode.com/about/">About Us</a></li>
-              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
-            </ul>
-          </div>
-        </div>
-        <hr />
+          
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
-         <a href="#">Steve and Nathalia</a>.
-            </p>
-          </div>
-
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="social-icons">
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
-            </ul>
-          </div>
-        </div>
-      </div>
-</footer>
-
-);
+  )
 }
+
 
 export default Footer;
 
