@@ -1,9 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Petcard.css'
+import Petregister from './Petregister';
 
 
 function Petcard({user}){
+    
+    const [showReg, setShowReg] = useState(false);
 
+    function handleClick(){
+        setShowReg((showReg) => !setShowReg)
+    }
 
     return(
         <div>
@@ -20,7 +26,7 @@ function Petcard({user}){
             </thead>
                 <tbody>
                     {user.pets.map(pet =>  
-                    <tr>
+                    <tr key={pet.id}>
                     <td>{pet.name + " " + user.last_name}</td>
                     <td>{pet.species}</td>
                     <td>{pet.breed}</td>
@@ -32,7 +38,12 @@ function Petcard({user}){
                 </tbody>
                 
         </table>
-        <button class="register">Register New Pet</button>
+
+
+        <button class="btn btn-outline-white mr-2" type="button" onClick={handleClick}>REGISTER NEW PET{showReg ? <Petregister /> : null}</button>
+        
+        
+        <a class="nav-link" href="/scheduleapt"><button class="btn btn-outline-white mr-2" type="button">SCHEDULE APPOINTMENT</button></a>
         
 
         </div>

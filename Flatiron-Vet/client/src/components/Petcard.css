@@ -60,7 +60,7 @@ body {
 	 box-shadow: 0 6px 6px -6px #0E1119;
 }
 
-.container td:hover {
+.container td:first-child:hover {
   background-color: #FFF842;
   color: #403E10;
   font-weight: bold;
@@ -76,7 +76,10 @@ body {
 
 .register {
   margin-top: 3em;
- margin-left: 35em;
+ margin-left: 30em;
+}
+.apt{
+  margin-left: 3em;
 }
 
 @media (max-width: 800px) {
