@@ -7,6 +7,8 @@ import Footer from './components/Footer'
 import Account from './components/Account'
 import Login from './components/Login'
 import Testimonials from './components/Testimonials'
+import Team from './components/Team'
+import Faq from './components/Faq'
 
 function App() {
 
@@ -76,10 +78,20 @@ function App() {
             <Header/>
             <Testimonials/>
             <Footer/>
-          </Route>
+            </Route>
+            <Route path="/team">
+              <Header/>
+              <Team/>
+              <Footer/>
+            </Route>
           <Route path="/">
             <Header logout={handleLogoutClick} user={user} setUser={setUser}/>
             <Home />
+            <Footer/>
+          </Route>
+          <Route path="/Faq">
+            <Header/>
+            <Faq/>
             <Footer/>
           </Route>
         </Switch>

@@ -23,7 +23,7 @@ function Testimonials() {
                     <p>No one is better than John Doe.</p>
                 </div>
                 <div className="container">
-                    <img src="./assets/dogmale2.jpeg" alt="image" className="avatar" style={{ width: "90px" }} />
+                    <img src="./assets/elephant.jpeg" alt="image" className="avatar" style={{ width: "90px" }} />
                     <p><span >Apollo.</span> CEO at Company.</p>
                     <p>No one is better than John Doe.</p>
                 </div>
