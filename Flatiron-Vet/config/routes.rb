@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post "/registerpet", to: "pets#create"
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
+  # post "/registerapt", to: "appointments#create"
 
 
   post "/login", to: "sessions#create"

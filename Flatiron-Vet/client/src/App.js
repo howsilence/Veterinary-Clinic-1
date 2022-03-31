@@ -9,7 +9,7 @@ import Login from './components/Login'
 import Testimonials from './components/Testimonials'
 import Team from './components/Team'
 import Faq from './components/Faq'
-import Schedule from "./components/Schedule";
+
 
 
 
@@ -89,9 +89,6 @@ function App() {
           <Route path="/Faq">
             <Faq />
           </Route>
-          <Route path="/schedule">
-           <Schedule user={user}/>
-            </Route>
           <Route path="/">
             <Home />
           </Route>

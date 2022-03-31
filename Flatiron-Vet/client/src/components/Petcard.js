@@ -38,6 +38,25 @@ function Petcard({user}){
                 </tr>
                 )}
             </tbody>
+            <thead>
+                <tr>
+                    <th><h1>Doctor</h1></th>
+                    <th><h1>Start Time</h1></th>
+                    <th><h1>End Time</h1></th>
+                    <th><h1>Duration</h1></th>
+                </tr>
+            </thead>
+            {user.appointments.map(appointment =>  
+             <tbody>
+        <tr key={appointment.id}>
+        <td>{appointment.doctor}</td>
+        <td>{appointment.start_time}</td>
+        <td>{appointment.end_time}</td>
+        <td>{appointment.duration}</td>
+        </tr>
+        </tbody>
+        )}    
+
                 
            
 
