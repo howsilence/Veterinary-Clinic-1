@@ -29,7 +29,7 @@ class PetsController < ApplicationController
     end
 
     def find_user
-        User.find(params[:user_id])
+        User.find(session[:user_id])
     end
 
 
