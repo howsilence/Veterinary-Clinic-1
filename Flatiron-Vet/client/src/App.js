@@ -9,12 +9,15 @@ import Login from './components/Login'
 import Testimonials from './components/Testimonials'
 import Team from './components/Team'
 import Faq from './components/Faq'
+import Scheduleapt from "./components/Scheduleaps";
 
 
 
 function App() {
 
-  //making sure we have our users
+  // making sure we have our users
+
+
   const [usersList, setUsersList] = useState([]);
   useEffect(() => {
     fetch("http://localhost:4000/users/")
@@ -65,43 +68,34 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+      <Header logout={handleLogoutClick} user={user} setUser={setUser} />
         <Switch>
           <Route path="/register">
-            <Header logout={handleLogoutClick} user={user} setUser={setUser} />
             <Register onAddUser={handleAddUser} />
-            <Footer />
           </Route>
           <Route path="/login">
-            <Header logout={handleLogoutClick} user={user} setUser={setUser} />
             <Login user={user} onLogin={setUser} />
-            <Footer />
           </Route>
           <Route path="/account">
-            <Header logout={handleLogoutClick} user={user} setUser={setUser} />
             <Account user={user} setUser={setUser} />
-            <Footer />
           </Route>
           <Route path="/testimonials">
-            <Header />
             <Testimonials />
-            <Footer />
           </Route>
           <Route path="/team">
-            <Header />
             <Team />
-            <Footer />
           </Route>
           <Route path="/Faq">
-            <Header logout={handleLogoutClick} user={user} setUser={setUser}  />
             <Faq />
-            <Footer />
           </Route>
+          <Route path="/scheduleapt">
+            <Scheduleapt user={user} />
+            </Route>
           <Route path="/">
-            <Header logout={handleLogoutClick} user={user} setUser={setUser} />
             <Home />
-            <Footer />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </BrowserRouter>
   );

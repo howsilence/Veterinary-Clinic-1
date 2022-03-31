@@ -1,7 +1,6 @@
 class Appointment < ApplicationRecord
-    belongs_to :pet
-    belongs_to :veterinarian
-
+    has_many :pets
+    has_many :users, through: :pets
 
 
 end

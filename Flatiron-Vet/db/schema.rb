@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_31_165235) do
+ActiveRecord::Schema.define(version: 2022_03_31_133048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.bigint "pets_id", null: false
     t.string "duration"
-    t.datetime "booked_at"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "doctor"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["pets_id"], name: "index_appointments_on_pets_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -31,9 +31,11 @@ ActiveRecord::Schema.define(version: 2022_03_31_165235) do
     t.float "age"
     t.float "weight"
     t.bigint "user_id", null: false
+    t.bigint "appointment_id", null: false
     t.boolean "fixed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["appointment_id"], name: "index_pets_on_appointment_id"
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
@@ -47,14 +49,6 @@ ActiveRecord::Schema.define(version: 2022_03_31_165235) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "veterinarians", force: :cascade do |t|
-    t.string "name"
-    t.string "specialty"
-    t.datetime "booked_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  add_foreign_key "appointments", "pets", column: "pets_id"
+  add_foreign_key "pets", "appointments"
   add_foreign_key "pets", "users"
 end

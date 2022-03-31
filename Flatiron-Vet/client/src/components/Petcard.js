@@ -11,7 +11,7 @@ function Petcard({user}){
         setToggleR((toggleR) => !toggleR)
     }
     
-  
+  console.log(user)
 
     return(
         <div>
@@ -26,7 +26,7 @@ function Petcard({user}){
                     <th><h1>Fixed</h1></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className='petbody'>
                 {user.pets.map(pet =>  
                 <tr key={pet.id}>
                 <td>{pet.name + " " + user.last_name}</td>

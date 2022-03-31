@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :veterinarians
   resources :appointments
   resources :pets
   resources :users
@@ -13,7 +12,5 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  
-  get "/hello", to: "application#hello_world"
 
 end
