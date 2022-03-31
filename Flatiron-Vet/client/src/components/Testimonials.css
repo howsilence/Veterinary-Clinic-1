@@ -44,6 +44,10 @@ h1 {
   /* Increase the font-size of a span element */
   .container span {
     font-size: 25px;
+
+
+    font-weight: bold;
+
     /* margin-right: 15px; */
   }
   
