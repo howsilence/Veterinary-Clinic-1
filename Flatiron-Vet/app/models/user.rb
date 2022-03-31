@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_many :pets 
-    has_many :appointments, through: :pets 
+    has_many :pets, dependent: :destroy
+    # has_many :appointments, through: :pets 
 
     validates :first_name, presence: true
     validates :last_name, presence: true
