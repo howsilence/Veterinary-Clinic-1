@@ -3,14 +3,14 @@ import React, {useState} from 'react'
 function Petregister({user}){
 
 
-    const [name, setName] = useState("");
-    const [species, setSpecies] = useState("");
-    const [breed, setBreed] = useState("");
-    const [age, setAge] = useState("");
-    const [weight, setWeight] = useState("");
-    const [fixed, setFixed] = useState(false);
-    const [errors, setErrors] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+  const [name, setName] = useState("");
+  const [species, setSpecies] = useState("");
+  const [breed, setBreed] = useState("");
+  const [age, setAge] = useState("");
+  const [weight, setWeight] = useState("");
+  const [fixed, setFixed] = useState(false);
+  const [errors, setErrors] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -21,8 +21,7 @@ function Petregister({user}){
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify(
-                {user: user.id},{
+            body: JSON.stringify({
               name: name,
               species: species,
               breed: breed,
@@ -39,7 +38,7 @@ function Petregister({user}){
               }
         });
       }
-    //   .then((pet) => onAddPet(pet));
+    
 
     return(
         <div class="formContainer">
@@ -85,7 +84,7 @@ function Petregister({user}){
                 <input
                   type="text"
                   name="weight"
-                  placeholder="Estimated Weight"
+                  placeholder="Estimated Weight in lbs"
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
                 />
@@ -93,7 +92,7 @@ function Petregister({user}){
                 <input
                   type="boolean"
                   name="fixed"
-                  placeholder="Spayed/Neutered?"
+                  placeholder="Spayed/Neutered? True/False"
                   value={fixed}
                   onChange={(e) => setFixed(e.target.value)}
                 />

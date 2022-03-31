@@ -5,11 +5,13 @@ import Petregister from './Petregister';
 
 function Petcard({user}){
     
-    const [showReg, setShowReg] = useState(false);
+    const [toggleR, setToggleR] = useState(false);
 
     function handleClick(){
-        setShowReg((showReg) => !setShowReg)
+        setToggleR((toggleR) => !toggleR)
     }
+    
+  
 
     return(
         <div>
@@ -24,25 +26,24 @@ function Petcard({user}){
                     <th><h1>Fixed</h1></th>
                 </tr>
             </thead>
-                <tbody>
-                    {user.pets.map(pet =>  
-                    <tr key={pet.id}>
-                    <td>{pet.name + " " + user.last_name}</td>
-                    <td>{pet.species}</td>
-                    <td>{pet.breed}</td>
-                    <td>{pet.age}</td>
-                    <td>{pet.weight + "lbs"}</td>
-                    <td>{pet.fixed ? "Yes" : "No"}</td>
+            <tbody>
+                {user.pets.map(pet =>  
+                <tr key={pet.id}>
+                <td>{pet.name + " " + user.last_name}</td>
+                <td>{pet.species}</td>
+                <td>{pet.breed}</td>
+                <td>{pet.age}</td>
+                <td>{pet.weight + "lbs"}</td>
+                <td>{pet.fixed ? "Yes" : "No"}</td>
                 </tr>
                 )}
-                </tbody>
+            </tbody>
                 
+           
+
         </table>
-
-
-        <button class="btn btn-outline-white mr-2" type="button" onClick={handleClick}>REGISTER NEW PET{showReg ? <Petregister /> : null}</button>
-        
-        
+        <button class="btn btn-outline-white mr-2" type="button" onClick={handleClick}>REGISTER NEW PET</button>
+                {toggleR ? <Petregister /> : ""}
         <a class="nav-link" href="/scheduleapt"><button class="btn btn-outline-white mr-2" type="button">SCHEDULE APPOINTMENT</button></a>
         
 

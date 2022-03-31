@@ -1,11 +1,18 @@
 class PetsController < ApplicationController
 
     def index
-        render json: Pet.all, status: :ok
+        if params[:user_id]
+            user = find_user
+            pets = user.pets
+        else
+            pets = Pet.all
+        end
+          render json: pets, include: :user, status: :ok
     end
+    
 
     def show
-        pet = Pet.find(id: params[:id])
+        pet = find_pet
         render json: pet, status: :ok
     end
 
@@ -16,11 +23,20 @@ class PetsController < ApplicationController
     end
 
     private
+    
     def pet_params
-        params.permit(:id, :name, :species, :breed, :age, :weight:, :fixed)
+        params.permit(:id, :name, :species, :breed, :age, :weight, :fixed)
     end
 
     def find_user
-        User.find(session[:user_id])
-      end
+        User.find(params[:user_id])
+    end
+
+
+    def find_pet
+        Pet.find(params[:id])
+    end
+
+    
+    
 end

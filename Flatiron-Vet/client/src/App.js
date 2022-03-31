@@ -9,7 +9,7 @@ import Login from './components/Login'
 import Testimonials from './components/Testimonials'
 import Team from './components/Team'
 import Faq from './components/Faq'
-import Petregister from "./components/Petregister";
+
 
 
 function App() {
