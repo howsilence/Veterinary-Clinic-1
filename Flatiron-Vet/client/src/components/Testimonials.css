@@ -14,7 +14,7 @@ h1 {
 }
 /* Style the container with a rounded border, grey background and some padding and margin */
 .container {
-    border: 2px solid #ccc;
+    border: 4px solid #ccc;
     background-color: #eee;
     border-radius: 5px;
     padding: 16px;
@@ -37,7 +37,8 @@ h1 {
   
   /* Increase the font-size of a span element */
   .container span {
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: bold;
     /* margin-right: 15px; */
   }
   
@@ -60,6 +61,3 @@ h1 {
 
   }
 
-  .nome-pet{
-    font-size: 18px;
-  }

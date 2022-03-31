@@ -38,6 +38,7 @@ h1 {
   /* Increase the font-size of a span element */
   .container span {
     font-size: 20px;
+    font-weight: bold;
     /* margin-right: 15px; */
   }
   
@@ -57,5 +58,4 @@ h1 {
   .avatar{
     height: 90px;
     width: 25px;
-
   }
