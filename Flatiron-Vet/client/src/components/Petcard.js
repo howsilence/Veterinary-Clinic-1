@@ -44,7 +44,7 @@ function Petcard({user}){
         </table>
         <button class="btn btn-outline-white mr-2" type="button" onClick={handleClick}>REGISTER NEW PET</button>
                 {toggleR ? <Petregister /> : ""}
-        <a class="nav-link" href="/scheduleapt"><button class="btn btn-outline-white mr-2" type="button">SCHEDULE APPOINTMENT</button></a>
+        <a class="nav-link" href="/schedule"><button class="btn btn-outline-white mr-2" type="button">SCHEDULE APPOINTMENT</button></a>
         
 
         </div>

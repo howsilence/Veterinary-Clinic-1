@@ -32,7 +32,7 @@ function Header({logout, user}) {
 							</li>
 					</ul>
 						<div className="form-inline">
-							<a className="nav-link" href="/scheduleapt"><button className="btn btn-outline-white mr-2" type="button">SCHEDULE APPOINTMENT</button></a>
+							<a className="nav-link" href="/schedule"><button className="btn btn-outline-white mr-2" type="button">SCHEDULE APPOINTMENT</button></a>
 							<a className="nav-link" href="/register"><button className="btn btn-outline-white mr-2" type="button">REGISTER</button></a>
 							<a className="nav-link" href="/login"><button className="btn btn-outline-white mr-2" type="button">{(user) ? "LOGOUT" : "LOGIN"}</button></a>
 						</div>
