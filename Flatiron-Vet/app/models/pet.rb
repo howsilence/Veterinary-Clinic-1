@@ -1,5 +1,9 @@
 class Pet < ApplicationRecord
   belongs_to :user
+  has_many :appointments
+  
+
+
 
     validates :name, presence: true, uniqueness: true
     validates :species, presence: true

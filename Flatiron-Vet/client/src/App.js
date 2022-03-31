@@ -38,7 +38,7 @@ function App() {
 
 
 
-  //setting state for our session
+  //setting state for our session, auto login
   const [user, setUser] = useState(null);
   useEffect(() => {
     fetch('/me').then((r) => {

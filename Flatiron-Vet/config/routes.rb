@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :veterinarians
+  resources :appointments
   resources :pets
   resources :users
   resources :sessions, only: [:create, :destroy]
