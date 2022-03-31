@@ -27,8 +27,6 @@ function Login({user, onLogin}){
           r.json().then((err) => setErrors(err.errors));
         }
       });
-
-      
     }
 
 

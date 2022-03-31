@@ -10,6 +10,8 @@ import Testimonials from './components/Testimonials'
 import Team from './components/Team'
 import Faq from './components/Faq'
 
+
+
 function App() {
 
   //making sure we have our users
@@ -28,6 +30,11 @@ function App() {
     const updatedUsersArray = [...usersList, newUser];
     setUsersList(updatedUsersArray);
   }
+
+  // function handleAddPet(newPet){
+  //   const updatedPetsArray = [...petsList, newPet]
+  //   setPetsList(updatedPetsArray)
+  // }
 
 
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Header({logout}) {
+
+function Header({logout, user}) {
 
 
 
@@ -11,7 +12,7 @@ function Header({logout}) {
 				<div class="c-container">
 					<div class="nav-items">
 					<a href="/">
-					<img class="site-logo" src="./assets/vetlogo.png" alt=""/>
+					<img class="site-logo" src="./assets/newvetlogo.png" alt=""/>
 					</a>
 					<ul class="main-nav">
 						<li class="nav-item active">
@@ -33,7 +34,7 @@ function Header({logout}) {
 						<div class="form-inline">
 							<a class="nav-link" href="/scheduleapt"><button class="btn btn-outline-white mr-2" type="button">SCHEDULE APPOINTMENT</button></a>
 							<a class="nav-link" href="/register"><button class="btn btn-outline-white mr-2" type="button">REGISTER</button></a>
-							<a class="nav-link" href="/login"><button class="btn btn-outline-white mr-2" type="button">LOGIN</button></a>
+							<a class="nav-link" href="/login"><button class="btn btn-outline-white mr-2" type="button">{(user) ? "LOGOUT" : "LOGIN"}</button></a>
 						</div>
 					</div>
 				</div>
