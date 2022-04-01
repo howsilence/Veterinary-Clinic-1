@@ -15,7 +15,7 @@ function Petcard({user}){
 
     return(
         <div>
-        <table class="container">
+        <table className="container">
             <thead>
                 <tr>
                     <th><h1>Name</h1></th>
@@ -38,32 +38,34 @@ function Petcard({user}){
                 </tr>
                 )}
             </tbody>
-            <thead>
+        </table>
+        <table className="container">
+        <thead>
                 <tr>
                     <th><h1>Doctor</h1></th>
-                    <th><h1>Start Time</h1></th>
-                    <th><h1>End Time</h1></th>
+                    <th><h1>Day</h1></th>
+                    <th><h1>Month</h1></th>
+                    <th><h1>Time</h1></th>
                     <th><h1>Duration</h1></th>
+                    <th><h1>With</h1></th>
                 </tr>
             </thead>
             {user.appointments.map(appointment =>  
              <tbody>
         <tr key={appointment.id}>
         <td>{appointment.doctor}</td>
-        <td>{appointment.start_time}</td>
-        <td>{appointment.end_time}</td>
+        <td>{appointment.day}</td>
+        <td>{appointment.month}</td>
+        <td>{appointment.time}</td>
         <td>{appointment.duration}</td>
+        <td>{appointment.with}</td>
         </tr>
         </tbody>
         )}    
-
-                
-           
-
         </table>
-        <button class="btn btn-outline-white mr-2" type="button" onClick={handleClick}>REGISTER NEW PET</button>
+        <button className="btn btn-outline-white mr-2" type="button" onClick={handleClick}>REGISTER NEW PET</button>
                 {toggleR ? <Petregister /> : ""}
-        <a class="nav-link" href="/schedule"><button class="btn btn-outline-white mr-2" type="button">SCHEDULE APPOINTMENT</button></a>
+        <a class="nav-link" href="/schedule"><button className="btn btn-outline-white mr-2" type="button">NEW APPOINTMENT</button></a>
         
 
         </div>

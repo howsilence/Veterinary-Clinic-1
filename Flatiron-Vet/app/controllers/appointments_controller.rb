@@ -27,7 +27,7 @@ class AppointmentsController < ApplicationController
     private
     
     def appointment_params
-        params.permit(:id, :doctor, :start_time, :end_time)
+        params.permit(:id, :doctor, :day, :month, :time, :with)
     end
 
     def find_user
