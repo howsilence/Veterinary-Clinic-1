@@ -6,8 +6,7 @@ class CreateAppointments < ActiveRecord::Migration[6.1]
       t.integer :month
       t.string :time
       t.string :doctor
-      t.string :with
-      
+      t.belongs_to :pet, null: false, foreign_key: true
       t.timestamps
     end
   end
