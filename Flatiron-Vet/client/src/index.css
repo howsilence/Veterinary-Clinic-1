@@ -16,6 +16,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle,
+        rgba(238, 174, 202, 1) 0%,
+        rgba(199, 233, 148, 1) 100%);
+ 
+    
   
   }
   :root {
@@ -120,7 +128,7 @@ body {
   }
   .btn-outline-white {
   color: var(--theme-color1);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(77, 75, 75, 0.1);
   background-image: none;
   border-width: 2px;
   border-color: var(--theme-color1);
@@ -152,139 +160,17 @@ body {
   
   
 
-/* Start Home Styling */
-/* .homemain {
-  display:flex;
-  flex-direction: column;
-}
-
-.firstContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #1f2937;
-    padding: 60px;
-    gap: 10px;
-}
-.secondContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    margin: 100px;
-}
-.thirdContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;    
-}
-.fourthContainer{
-    display: flex;
-    justify-content: center;
-}
-/*FIRST SECTION*/
-/* .homeh1 {
-    font-size: 48px;
-    font: bolder;
-    color: #f9faf8
-}
-.leftFirst p {
-    font-size: 18px;
-    color: #e5e7eb;
-    
-}
-.leftFirst button {
-    background-color:#3882f6;
-    color: white;
-    border-radius: 10px;
-    border:none;
-}
-
-.leftFirst {
-    display: flex;
-    flex-direction: column;
-    flex:1;
-    max-width: 75%;
-    max-height: 75%;
-    margin-left: 160px;
-}
-.rightFirst {
-    align-self:auto;
-    flex: 1;
-    max-width: 100%;
-    max-height: 100%;
-}
-/* SECOND SECTION*/
-
-/* .oneAbove {
-    display: flex;
-    font-size: 36px;
-    font-weight: bolder;
-    color: #1f2937
-} */ 
-
-/*THIRD SECTION*/
-/* .quote {
-    display: flex;
-    flex:1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #e5e7eb;
-    
-}
-h3 {
-    font-size: 36px;
-    color:#1f2937;
-    font-style:italic;
-    font-weight:lighter;
-    margin: 100px;
-}
-
-
-FOURTH SECTION
- .blueBox {
-    display: flex;
-    flex:1;
-    background-color:#3882f6;
-    max-width: 85%;
-    margin: 100px;
-    padding: 20px;
-    flex-wrap: nowrap;
-    border-radius: 10px;
-}
-.boxText {
-    flex: 1;
-   align-self: center;
-   color: white;
-   margin: 20px;
-}
-.body-button {
-    margin: 45px;
-    max-width: 160px;
-    max-height: 80px;
-    background-color:#3882f6;
-    color: white;
-    border-radius: 10px;
-    font-weight: bold;
-    border:white 2px solid;
-    
-} */
 
 /* FORM BUTTON STYLING */
-/* .formContainer{
-    background-color: #1f2937;
-}
+
 section.form {
 	opacity: 1;
 	background-color: transparent;
 	padding: 20px;
 	text-align: center;
-  	color: #cacaca;
+  	/* color: #cacaca;
+} */
 }
-
 .center {
 	margin-right: auto;
   	margin-left: auto;
@@ -304,16 +190,16 @@ input {
 	margin-left: auto;
 	margin-bottom: 10px;
 	box-shadow: none;
-	color: #fff;
+	/* color: #fff; */
 	border: none;
-	background-color: #5d5d5d;
+	/* background-color: #5d5d5d; */
 	transition: 1s;
 	border: 2px solid transparent;
 }
 
 input:focus, input:hover {
 	transition: 1s;
-	border: 2px solid #5d5d5d;
+	border: 2px solid #2c2c2c;
 	background-color: transparent;
 }
 
@@ -325,7 +211,7 @@ input:focus, input:hover {
 .formSubmit {
 	width: 86%;
 	border-radius: 20px;
-	background-color: #cacaca;
+	/* background-color: #cacaca; */
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
@@ -344,8 +230,18 @@ input:focus, input:hover {
 
 .formHr{
     border: "1px", solid, #daa800;
-    width: 20%
+    width: 20%;
+    margin-left: 41%;
+    margin-bottom: 10px;
 }
 .formB{
     color: #daa800
-} */ 
+}
+.formh1 {
+    text-align: center;
+    margin: 2rem 0 4rem 0;
+}
+.formh2 {
+    text-align: center;
+    margin: 2rem 0 4rem 0;
+}

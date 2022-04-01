@@ -33,9 +33,9 @@ puts "Seeding Appointments..."
 
 #####datetime = DateTime.civil(2007, 12, 4, 0, 0, 0, 0)   # => Tue, 04 Dec 2007 00:00:00 +0000
 
-a1 = Appointment.create(doctor: "Dr. Otto Octavius",day: 12, month: 4, time:"11:00am", duration: "45 mins", pet_id: p1.id)
+a1 = Appointment.create(doctor: "Dr. Ava",day: 12, month: 4, time:"11:00am", duration: "45 mins", pet_id: p1.id)
 
-a2 = Appointment.create(doctor: "Dr. Stephen Strange",day: 16, month: 8, time:"1:00pm", duration: "45 mins", pet_id: p2.id)
+a2 = Appointment.create(doctor: "Dr. Elijah",day: 16, month: 8, time:"1:00pm", duration: "45 mins", pet_id: p2.id)
 
 a3 = Appointment.create(doctor: "Dr. Curt Conners",day: 3, month: 6, time:"11:00am", duration: "45 mins", pet_id: p3.id)
 
