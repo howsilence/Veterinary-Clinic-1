@@ -32,7 +32,7 @@ function Login({user, onLogin}){
 
       
 
-    if (user) return <Account user={user} />;
+    // if (user) return <Account user={user} />;
     return(
       <div class="formContainer">
         <section class="form">

@@ -22,6 +22,18 @@ class PetsController < ApplicationController
         render json: pet, status: :created
     end
 
+    def destroy
+        pet = find_pet
+        pet.destroy
+        head :no_content
+    end
+
+    def update
+        pet = find_pet
+        pet.update!(pet_params)
+        render json: pet
+    end
+
     private
     
     def pet_params

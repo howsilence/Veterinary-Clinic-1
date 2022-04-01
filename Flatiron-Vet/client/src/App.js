@@ -16,8 +16,6 @@ import Faq from './components/Faq'
 
 function App() {
 
-  // making sure we have our users
-
 
   const [usersList, setUsersList] = useState([]);
   useEffect(() => {
@@ -30,16 +28,12 @@ function App() {
   }, []);
   console.log(usersList)
 
+
+
   function handleAddUser(newUser) {
     const updatedUsersArray = [...usersList, newUser];
     setUsersList(updatedUsersArray);
   }
-
-  // function handleAddPet(newPet){
-  //   const updatedPetsArray = [...petsList, newPet]
-  //   setPetsList(updatedPetsArray)
-  // }
-
 
 
   //setting state for our session, auto login
@@ -78,7 +72,7 @@ function App() {
             <Login user={user} onLogin={setUser} />
           </Route>
           <Route path="/account">
-            <Account user={user} setUser={setUser} />
+            <Account user={user} setUser={setUser} onAddUser={handleAddUser} />
           </Route>
           <Route path="/testimonials">
             <Testimonials />

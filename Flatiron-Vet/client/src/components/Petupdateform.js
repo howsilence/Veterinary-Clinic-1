@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
-function Petregister({user, onAddUser}){
+function Petupdateform({user}){
+ 
 
   const [name, setName] = useState("");
   const [species, setSpecies] = useState("");
@@ -12,18 +13,11 @@ function Petregister({user, onAddUser}){
   const [isLoading, setIsLoading] = useState(false);
 
 
-  function takeData(petObj){
-    console.log(petObj)
-    console.log(user)
-  }
-  
-
-
-    function handleSubmit(e) {
+      function handleUpdate(e) {
         e.preventDefault();
         setErrors([]);
         setIsLoading(true);
-          fetch("/registerpet", {
+          fetch("/updatepet", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -39,21 +33,21 @@ function Petregister({user, onAddUser}){
           }).then((r) => {
               setIsLoading(false);
               if (r.ok){
-              r.json().then((data) => takeData(data))
+              r.json()
               } else {
                 r.json().then((err) => setErrors(err.errors));
               }
         });
       }
+    
 
-  
     return(
         <div class="formContainer">
           <section class="form">
             <div class="center">
 	            
-              <h2>Add Pet</h2>
-              <form onSubmit={handleSubmit}>
+              <h2>Manage Pet(s)</h2>
+              <form onSubmit={handleUpdate}>
                 <input
                   type="text"
                   class="firstLastNames"
@@ -104,7 +98,7 @@ function Petregister({user, onAddUser}){
                   onChange={(e) => setFixed(e.target.value)}
                 />
 
-                <button class="formSubmit" type="submit">{isLoading ? "Loading.." : "Add New"}</button>
+                <button class="formSubmit" type="submit">{isLoading ? "Loading.." : "Update"}</button>
                
 
                 <span>
@@ -120,4 +114,4 @@ function Petregister({user, onAddUser}){
     )
 }
 
-export default Petregister;
+export default Petupdateform;
