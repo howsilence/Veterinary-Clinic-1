@@ -12,7 +12,9 @@ function Header({logout, user}) {
 				<div className="c-container">
 					<div className="nav-items">
 					<a href="/">
-					<img className="site-logo" src="./assets/vetlogo.png" alt=""/>
+
+					<img class="site-logo" src="./assets/newvetlogo.png" alt=""/>
+
 					</a>
 					<ul className="main-nav">
 						<li className="nav-item active">

@@ -4,7 +4,7 @@ import './Testimonials.css'
 
 function Testimonials() {
     return (
-        <React.Fragment>
+        <div className="testimonialdiv">
             <h1><center>Testimonials</center></h1>
             <div className='testimonial-wrapper'>
                 <div className="container">
@@ -39,7 +39,7 @@ function Testimonials() {
                     <p>No one is better than John Doe.</p>
                 </div>
             </div>
-        </React.Fragment>
+        </div>
     )
 }
 

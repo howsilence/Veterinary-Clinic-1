@@ -2,7 +2,12 @@
 h1 {
     color: black;
     font-family: georgia, arial, helvetica
+}
 
+.testimonialdiv p {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
 }
 
 .testimonial-wrapper{
@@ -10,7 +15,8 @@ h1 {
     flex-direction: column;
     justify-content:center;
     max-width: 50%;
-    margin-left: 25vw;
+    margin-left: 30vw;
+    margin-bottom: 5em;
 }
 /* Style the container with a rounded border, grey background and some padding and margin */
 .container {
@@ -38,7 +44,10 @@ h1 {
   /* Increase the font-size of a span element */
   .container span {
     font-size: 25px;
+
+
     font-weight: bold;
+
     /* margin-right: 15px; */
   }
   

@@ -38,6 +38,7 @@ h1 {
 .accordion-title,
 .accordion-content {
     padding: 1rem;
+    color: black;
 }
 
 .accordion-content {

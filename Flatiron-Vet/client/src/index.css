@@ -153,7 +153,7 @@ body {
   
 
 /* Start Home Styling */
-.homemain {
+/* .homemain {
   display:flex;
   flex-direction: column;
 }
@@ -185,7 +185,7 @@ body {
     justify-content: center;
 }
 /*FIRST SECTION*/
-.homeh1 {
+/* .homeh1 {
     font-size: 48px;
     font: bolder;
     color: #f9faf8
@@ -218,15 +218,15 @@ body {
 }
 /* SECOND SECTION*/
 
-.oneAbove {
+/* .oneAbove {
     display: flex;
     font-size: 36px;
     font-weight: bolder;
     color: #1f2937
-}
+} */ 
 
 /*THIRD SECTION*/
-.quote {
+/* .quote {
     display: flex;
     flex:1;
     flex-direction: column;
@@ -271,10 +271,10 @@ FOURTH SECTION
     font-weight: bold;
     border:white 2px solid;
     
-}
+} */
 
 /* FORM BUTTON STYLING */
-.formContainer{
+/* .formContainer{
     background-color: #1f2937;
 }
 section.form {
@@ -348,4 +348,4 @@ input:focus, input:hover {
 }
 .formB{
     color: #daa800
-}
+} */ 
