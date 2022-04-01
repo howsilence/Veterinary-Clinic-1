@@ -1,6 +1,4 @@
 import React from 'react';
-// import background from '../../public/assets/homepic.jpeg';
-
 
 
 function Home(){
