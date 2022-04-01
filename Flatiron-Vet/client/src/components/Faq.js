@@ -2,8 +2,6 @@ import React from 'react';
 import Accordion from './Accordion';
 import { accordionData } from '../utils/content';
 import './Faq.css';
-// import 'client/src/components/Faq.css'
-
 
 
 const Faq = () => {

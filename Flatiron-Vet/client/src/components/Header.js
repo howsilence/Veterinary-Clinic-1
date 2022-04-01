@@ -3,9 +3,6 @@ import React from 'react';
 
 function Header({logout, user}) {
 
-
-
-
     return(
 
         <header class="header colored sticky-header" data-scroll="out">
