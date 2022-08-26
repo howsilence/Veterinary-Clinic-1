@@ -12,8 +12,6 @@ import Faq from './components/Faq'
 
 
 
-
-
 function App() {
 
 
@@ -27,7 +25,6 @@ function App() {
       });
   }, []);
   console.log(usersList)
-
 
 
   function handleAddUser(newUser) {
@@ -46,10 +43,6 @@ function App() {
     });
   }, []);
 
-
-
-
-
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
@@ -57,8 +50,6 @@ function App() {
       }
     });
   }
-
-
 
   return (
     <BrowserRouter>

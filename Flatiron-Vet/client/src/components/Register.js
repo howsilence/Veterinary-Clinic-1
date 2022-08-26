@@ -43,7 +43,7 @@ function Register({onAddUser}){
         <div class="formContainer">
           <section class="form">
             <div class="center">
-	            <h1 class="formh1">JOIN OVER OUR NETWORK</h1>
+	            <h1 class="formh1">JOIN OUR NETWORK</h1>
 	            <hr class="formHr" />
 
               <form onSubmit={handleSubmit}>
